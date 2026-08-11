@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{7D7DCC71-4B7D-4D3C-8D16-123456789ABC}</ProjectGuid>
+    <MainSource>TourismWeb.dpr</MainSource>
+    <ProjectVersion>18.5</ProjectVersion>
+    <FrameworkType>None</FrameworkType>
+    <Base>True</Base>
+    <Config Condition="'$(Config)'==''">Debug</Config>
+    <Platform Condition="'$(Platform)'==''">Win32</Platform>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Config)'=='Debug'">
+    <DCC_Define>DEBUG</DCC_Define>
+    <DCC_DebugDCUs>true</DCC_DebugDCUs>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Config)'=='Release'">
+    <DCC_DebugDCUs>false</DCC_DebugDCUs>
+    <DCC_Optimize>true</DCC_Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <DelphiCompile Include="TourismWeb.dpr">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DelphiCompile Include="WebModuleUnit.pas">
+      <Form>WebModule1</Form>
+    </DelphiCompile>
+  </ItemGroup>
+</Project>
